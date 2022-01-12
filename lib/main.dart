@@ -20,7 +20,6 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Personal Info',
       theme: ThemeData.dark(),
-      home: const HomeScreen(),
       initialRoute: HomeScreen.routeName,
       routes: {
         HomeScreen.routeName: (_) => const HomeScreen(),
