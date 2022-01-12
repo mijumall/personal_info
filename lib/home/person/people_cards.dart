@@ -13,16 +13,15 @@ class PeopleCards extends ConsumerWidget {
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     final personWatcher = ref.watch(personProvider);
-    return SingleChildScrollView(
-      child: Column(
-        children: [
-          PersonCard(
-            imageUrl: personWatcher.data[0]['imageUrl'],
-            name: personWatcher.data[0]['name'],
-            description: personWatcher.data[0]['description'],
-          ),
-        ],
-      ),
+    return ListView.builder(
+      itemCount: personWatcher.data.length,
+      itemBuilder: (_, index) {
+        return PersonCard(
+          imageUrl: personWatcher.data[0]['imageUrl'],
+          name: personWatcher.data[0]['name'],
+          description: personWatcher.data[0]['description'],
+        );
+      },
     );
   }
 }
