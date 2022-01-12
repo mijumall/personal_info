@@ -1,22 +1,31 @@
 import 'package:flutter/material.dart';
 
+import './person_detail_screen.dart';
+
 class PersonCard extends StatelessWidget {
   const PersonCard({
     Key? key,
     required this.imageUrl,
     required this.name,
     required this.description,
+    required this.index,
   }) : super(key: key);
 
   final String imageUrl;
   final String name;
   final String description;
+  final int index;
 
   @override
   Widget build(BuildContext context) {
     final _cardWidth = MediaQuery.of(context).size.width * 0.95;
     return GestureDetector(
-      onTap: () {},
+      onTap: () {
+        Navigator.of(context).pushNamed(
+          PersonDetailScreen.routeName,
+          arguments: index,
+        );
+      },
       child: Center(
         child: Container(
           margin: const EdgeInsets.all(5),

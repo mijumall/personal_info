@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:personal_info/home/home_screen.dart';
+
+import './home/home_screen.dart';
+import './home/person/person_detail_screen.dart';
 
 void main() {
   runApp(
@@ -19,6 +21,11 @@ class MyApp extends StatelessWidget {
       title: 'Personal Info',
       theme: ThemeData.dark(),
       home: const HomeScreen(),
+      initialRoute: HomeScreen.routeName,
+      routes: {
+        HomeScreen.routeName: (_) => const HomeScreen(),
+        PersonDetailScreen.routeName: (_) => const PersonDetailScreen(),
+      },
     );
   }
 }

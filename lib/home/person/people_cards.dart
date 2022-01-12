@@ -17,9 +17,10 @@ class PeopleCards extends ConsumerWidget {
       itemCount: personWatcher.data.length,
       itemBuilder: (_, index) {
         return PersonCard(
-          imageUrl: personWatcher.data[0]['imageUrl'],
-          name: personWatcher.data[0]['name'],
-          description: personWatcher.data[0]['description'],
+          imageUrl: personWatcher.data[index]['imageUrl'],
+          name: personWatcher.data[index]['name'],
+          description: personWatcher.data[index]['description'],
+          index: index,
         );
       },
     );
