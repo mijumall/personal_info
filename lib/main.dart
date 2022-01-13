@@ -3,6 +3,7 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 import './home/home_screen.dart';
 import './home/person/person_detail_screen.dart';
+import './home/add_screen.dart';
 
 void main() {
   runApp(
@@ -24,6 +25,7 @@ class MyApp extends StatelessWidget {
       routes: {
         HomeScreen.routeName: (_) => const HomeScreen(),
         PersonDetailScreen.routeName: (_) => const PersonDetailScreen(),
+        AddScreen.routeName: (_) => const AddScreen(),
       },
     );
   }

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+import './add_screen.dart';
 import './person/people_cards.dart';
 
 class HomeScreen extends StatelessWidget {
@@ -10,10 +11,14 @@ class HomeScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(15)),
-      ),
+      appBar: AppBar(title: const Text('HOME')),
       body: const PeopleCards(),
+      floatingActionButton: FloatingActionButton(
+        onPressed: () {
+          Navigator.of(context).pushNamed(AddScreen.routeName);
+        },
+        child: const Icon(Icons.add),
+      ),
     );
   }
 }
