@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 import './person_provider.dart';
+import './edit_screen.dart';
 
 final personProvider = ChangeNotifierProvider((_) => PersonProvider());
 
@@ -20,9 +21,7 @@ class PersonDetailScreen extends ConsumerWidget {
     final displayData = personWatcher.data[index];
 
     return Scaffold(
-      appBar: AppBar(
-        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(20)),
-      ),
+      appBar: AppBar(),
       body: ListView(
         children: [
           // Image
@@ -76,7 +75,9 @@ class PersonDetailScreen extends ConsumerWidget {
         ],
       ),
       floatingActionButton: FloatingActionButton(
-        onPressed: () {},
+        onPressed: () {
+          Navigator.of(context).pushNamed(EditScreen.routeName);
+        },
         child: const Icon(Icons.edit),
       ),
     );
