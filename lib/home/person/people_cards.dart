@@ -13,16 +13,21 @@ class PeopleCards extends ConsumerWidget {
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     final personWatcher = ref.watch(personProvider);
-    return ListView.builder(
-      itemCount: personWatcher.data.length,
-      itemBuilder: (_, index) {
-        return PersonCard(
-          imageUrl: personWatcher.data[index]['imageUrl'],
-          name: personWatcher.data[index]['name'],
-          description: personWatcher.data[index]['description'],
-          index: index,
-        );
+    return RefreshIndicator(
+      onRefresh: () {
+        return Future.value();
       },
+      child: ListView.builder(
+        itemCount: personWatcher.data.length,
+        itemBuilder: (_, index) {
+          return PersonCard(
+            imageUrl: personWatcher.data[index]['imageUrl'],
+            name: personWatcher.data[index]['name'],
+            description: personWatcher.data[index]['description'],
+            index: index,
+          );
+        },
+      ),
     );
   }
 }

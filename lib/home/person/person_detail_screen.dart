@@ -9,9 +9,7 @@ final personProvider = ChangeNotifierProvider((_) => PersonProvider());
 class PersonDetailScreen extends ConsumerWidget {
   static const routeName = '/person_detail_screen';
 
-  const PersonDetailScreen({
-    Key? key,
-  }) : super(key: key);
+  const PersonDetailScreen({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {

@@ -111,7 +111,6 @@ class _AddScreenState extends State<AddScreen> {
                       width: 25,
                     ),
                     DropdownButton(
-                      hint: const Text('Gender'),
                       value: _gender,
                       items: ['Female', 'Male', 'Others']
                           .map((e) => DropdownMenuItem(
